@@ -6,22 +6,21 @@ using namespace std;
 
 int main()
 {
-	Route trasa("dane.txt");
 	OptimalRouteGenerator opt("dane.txt", 1000, 0.1, 0.995);
-	trasa.showDistTab();
+	opt.r->showDistTab();
 	cout << endl << "Droga pocz¹tkowa: " << endl;
-	trasa.showRoute();
-	cout << endl << "Caclulatego route: " << trasa.calculateDist() << endl;
+	opt.r->showRoute();
+	cout << endl << "Caclulatego route: " << opt.r->calculateDist() << endl;
 
 	cout << endl << "Po optymalizacji: " << endl;
 	string lines(30,'-');
 	lines.append("\n");
 
 	cout << lines;
-	cout << "Calculated route: " << opt.startAlgorithm(100) << endl;
+	cout << "Calculated route: " << opt.startAlgorithm(30) << endl;
 	opt.showOptRoute();
-	cout << lines;
-
+	cout << lines << endl;
+	cout << "Iloœæ optymalnych rozwiazan: " << opt.howMany << endl;
 	system("pause");
 	return 0;
 }

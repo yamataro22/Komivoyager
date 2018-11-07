@@ -11,10 +11,13 @@ public:
 	~OptimalRouteGenerator();
 	int startAlgorithm();
 	int startAlgorithm(int quantity);
+	int startAlgorithm(int quantity, double Tp, double Tk, double lambda);
 	void showOptRoute();
+	Route *r;
+	int howMany = 0;
 private:
 	int* route;
-	Route* r;
+	int minDistance = 100000;
 	double Tp;
 	double Tk;
 	double lambda;
